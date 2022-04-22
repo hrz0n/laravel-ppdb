@@ -6,6 +6,9 @@
             <span class="link-title">Home</span>
         </a>
     </li>
+
+{{--    This menu only for user level 2 and 3--}}
+    @if(\Illuminate\Support\Facades\Auth::user()->level >= 2)
     <li class="nav-item nav-category">Master Data</li>
     <li class="nav-item ">
         <a class="nav-link" data-bs-toggle="collapse" href="#users" role="button" aria-expanded="false">
@@ -42,4 +45,57 @@
             <span class="link-title">Laporan</span>
         </a>
     </li>
+{{--        This is menu only for user--}}
+    @elseif(\Illuminate\Support\Facades\Auth::user()->level == 1)
+        <li class="nav-item nav-category">Master Data</li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="user"></i>
+                <span class="link-title">Biodata</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="bookmark"></i>
+                <span class="link-title">Jurusan</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="check-square"></i>
+                <span class="link-title">Nilai</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="gift"></i>
+                <span class="link-title">Prestasi</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="file-text"></i>
+                <span class="link-title">Dokumen</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="printer"></i>
+                <span class="link-title">Bukti Daftar</span>
+            </a>
+        </li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="message-circle"></i>
+                <span class="link-title">Status Lulus</span>
+            </a>
+        </li>
+        <li class="nav-item nav-category">Setting</li>
+        <li class="nav-item ">
+            <a href="#" class="nav-link">
+                <i class="link-icon" data-feather="settings"></i>
+                <span class="link-title">Akun</span>
+            </a>
+        </li>
+    @endif
 </ul>
