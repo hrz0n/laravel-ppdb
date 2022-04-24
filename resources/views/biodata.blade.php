@@ -35,9 +35,15 @@
                             </div>
                         @endif
 
+                        @php
+                            $imguser = "no-img.png";
+                            if(!empty($biodata)) {
+                                 $imguser = $biodata->img_user??null;
+                            }
+                        @endphp
 
                         <div class="mb-3 mt-1 d-flex align-items-center">
-                            <img width="80px" alt="User Img" src="{{asset('storage/upload/img/')."/".$biodata->img_user??null}}">
+                            <img width="80px" alt="User Img" src="{{asset('storage/upload/img/')."/".$imguser}}">
                             <div class="ms-2">
                                 <input type="file" class="form-control" name="img_user" id="img_user">
                             </div>
@@ -115,5 +121,5 @@
         </div>
     </div>
 </div>
-    
+
 @endsection
