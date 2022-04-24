@@ -49,7 +49,7 @@
     @elseif(\Illuminate\Support\Facades\Auth::user()->level == 1)
         <li class="nav-item nav-category">Master Data</li>
         <li class="nav-item ">
-            <a href="#" class="nav-link">
+            <a href="{{route('biodata')}}" class="nav-link">
                 <i class="link-icon" data-feather="user"></i>
                 <span class="link-title">Biodata</span>
             </a>

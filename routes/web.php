@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,6 @@ Route::post('/processRegister',[RegisterController::class,'processRegister'])->n
 
 Route::group(['middleware' => ['auth','level:1,2,3']], function (){
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/biodata',[BiodataController::class, 'index'])->name('biodata');
+    Route::post('/biodata',[BiodataController::class, 'processBiodata'])->name('processBiodata');
 });
