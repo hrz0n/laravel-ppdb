@@ -55,7 +55,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a href="#" class="nav-link">
+            <a href="{{route('jurusan')}}" class="nav-link">
                 <i class="link-icon" data-feather="bookmark"></i>
                 <span class="link-title">Jurusan</span>
             </a>
