@@ -61,7 +61,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a href="#" class="nav-link">
+            <a href="{{route('nilai')}}" class="nav-link">
                 <i class="link-icon" data-feather="check-square"></i>
                 <span class="link-title">Nilai</span>
             </a>

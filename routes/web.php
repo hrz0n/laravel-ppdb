@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BiodataController;
@@ -32,7 +33,10 @@ Route::post('/processRegister',[RegisterController::class,'processRegister'])->n
 Route::group(['middleware' => ['auth','level:1,2,3']], function (){
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
     Route::get('/biodata',[BiodataController::class, 'index'])->name('biodata');
-    Route::post('/biodata',[BiodataController::class, 'processBiodata'])->name('processBiodata');
+    Route::post('/biodata/create',[BiodataController::class, 'processBiodata'])->name('processBiodata');
     Route::get('/jurusan',[JurusanController::class, 'index'])->name('jurusan');
     Route::post('/storePostJurusan',[JurusanController::class, 'storePostJurusan'])->name('storePostJurusan');
+    Route::get('/nilai',[NilaiController::class, 'index'])->name('nilai');
+    Route::post('/storePostNilai',[NilaiController::class, 'storePostNilai'])->name('storePostNilai');
+
 });
