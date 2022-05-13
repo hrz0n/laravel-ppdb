@@ -67,7 +67,7 @@
             </a>
         </li>
         <li class="nav-item ">
-            <a href="#" class="nav-link">
+            <a href="{{route('prestasi')}}" class="nav-link">
                 <i class="link-icon" data-feather="gift"></i>
                 <span class="link-title">Prestasi</span>
             </a>

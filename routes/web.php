@@ -5,6 +5,7 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,5 +39,6 @@ Route::group(['middleware' => ['auth','level:1,2,3']], function (){
     Route::post('/storePostJurusan',[JurusanController::class, 'storePostJurusan'])->name('storePostJurusan');
     Route::get('/nilai',[NilaiController::class, 'index'])->name('nilai');
     Route::post('/storePostNilai',[NilaiController::class, 'storePostNilai'])->name('storePostNilai');
-
+    Route::get('/prestasi',[PrestasiController::class, 'index'])->name('prestasi');
+    Route::post('/storePrestasi',[PrestasiController::class, 'store'])->name('storePrestasi');
 });
